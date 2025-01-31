@@ -163,12 +163,28 @@ belt.append(loot)
 print("Your belt: ", belt)
 
 # Lab4 06 - The player collects second item from loot
-print("You find the loot bag! Look inside to find 2 items")
-input("Roll for the second item (Press Enter)")
+input("Now roll for the second item (Press Enter)")
 lootRoll = random.choice(range(1, len(loot_options) + 1))
 loot = loot_options.pop(lootRoll - 1)
 belt.append(loot)
 print("Your belt: ", belt)
+
+# Lab4 07 - Sort the belt
+belt.sort()
+print("Your belt items are sorted as: ", belt)
+
+# Lab4 08 - Use the belt
+print("You see a Monster! Quickly use the first item!")
+first_item = belt.pop(0)
+if first_item in good_loot_options:
+    health_points = min(6, (health_points + 2))
+    print(f"You used {first_item}, and your health changed to {health_points} points")
+elif first_item in bad_loot_options:
+    health_points = max(0, (health_points - 2))
+    print(f"You used {first_item}, and your health changed to {health_points}")
+else:
+    print(f"You used {first_item}, but it was not helpful!")
+
 
 input("Analyze the roll (Press enter)")
 # Compare Player vs Monster's strength
