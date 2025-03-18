@@ -34,4 +34,4 @@ else:
     os.wait()
     print("child finished")
     file_object_TextIO.close()
-sys.exit(0)    
+sys.exit(0)
